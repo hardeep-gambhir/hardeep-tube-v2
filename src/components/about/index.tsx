@@ -1,6 +1,6 @@
 import { FC } from "react"
 import TextLoop from "react-text-loop"
-// import { ContentContainer } from "@components/index/styles"
+import { ContentContainer } from "@components/index/styles"
 import { P, Blurb, BlurbHighlighted } from "@typography/styles"
 import styled, { keyframes } from "styled-components"
 
@@ -14,37 +14,43 @@ const Loop: FC<{
 	)
 }
 
-const ContentContainer = styled.div`
-  // Remove any background color if present
-  background: transparent;
-  // Add any other styles you need for ContentContainer
-`;
+// const ContentContainer = styled.div`
+//   // Remove any background color if present
+//   background: transparent;
+//   // Add any other styles you need for ContentContainer
+// `;
 
-const GlassBackground = styled.div`
-  background: rgba(255, 255, 255, 0.1);
-//   backdrop-filter: blur(15px); // Increased blur for a more blurry effect
-//   -webkit-backdrop-filter: blur(50px); // Increased blur for a more blurry effect
-  border-radius: 9px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 30px;
+// const GlassBackground = styled.div`
+//   background: rgba(255, 255, 255, 0.1);
+// //   backdrop-filter: blur(15px); // Increased blur for a more blurry effect
+// //   -webkit-backdrop-filter: blur(50px); // Increased blur for a more blurry effect
+//   border-radius: 9px;
+//   border: 1px solid rgba(255, 255, 255, 0.18);
+//   padding: 30px;
 
-  box-sizing: border-box;
-  width: 98%;
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden; // This will ensure content doesn't overflow the rounded corners
-`;
+//   box-sizing: border-box;
+//   width: 98%;
+//   max-width: 1000px;
+//   margin: 0 auto;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   overflow: hidden; // This will ensure content doesn't overflow the rounded corners
+// `;
 
 const ContentWrapper = styled.div`
-  width: 100%;
+  width: 40%;
   padding: 10px;
   overflow-wrap: break-word;
   word-wrap: break-word;
   position: relative;
   z-index: 1;
+`;
+
+const WrappingBlurbHighlighted = styled(BlurbHighlighted)`
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 `;
 
 export const Component: FC = () => {
@@ -69,8 +75,8 @@ export const Component: FC = () => {
 
   return (
     <ContentContainer>
-      <GlassBackground>
-        <ContentWrapper>
+      {/* <GlassBackground> */}
+        {/* <ContentWrapper> */}
           <P />
           <Blurb>
 		  <P />
@@ -94,7 +100,7 @@ export const Component: FC = () => {
             <Loop delay={2000}>
               {listening.map((item) => (
                 <div key={item}>
-                  <BlurbHighlighted>{item}.</BlurbHighlighted>
+                  <WrappingBlurbHighlighted>{item.trim()}.</WrappingBlurbHighlighted>
                 </div>
               ))}
             </Loop>
@@ -111,9 +117,9 @@ export const Component: FC = () => {
             <br />
             Some of my best work:
             <ul>
-              <li>Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a network of group houses across the world</li>
-              <li>Developed <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education at 19</li>
-              <li>Built projects as a Builder at <BlurbHighlighted><a href="https://buildspace.so/sf2" target="_blank" rel="noopener noreferrer">Buildspace sf2</a></BlurbHighlighted>; buildspace's last IRL cohort</li>
+              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a network of group houses across the world</li>
+              <li>• Developed <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education at 19</li>
+              <li>• Built projects as a Builder at <BlurbHighlighted><a href="https://buildspace.so/sf2" target="_blank" rel="noopener noreferrer">Buildspace sf2</a></BlurbHighlighted>; buildspace's last IRL cohort</li>
             </ul>
           </Blurb>
 
@@ -128,8 +134,8 @@ export const Component: FC = () => {
           <Blurb>
             Updated as of October 9, 2024
           </Blurb>
-        </ContentWrapper>
-      </GlassBackground>
+        {/* </ContentWrapper> */}
+      {/* </GlassBackground> */}
       <P />
     </ContentContainer>
   );
