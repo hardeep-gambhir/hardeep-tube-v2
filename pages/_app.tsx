@@ -24,7 +24,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 	const body = (
 		<>
 			<Head>
-				<title>rehat</title>
+				<title>Hardeep 🧠🫶</title>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0 viewport-fit=cover"

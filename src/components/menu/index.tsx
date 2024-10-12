@@ -15,33 +15,30 @@ import { useRouter } from "next/router"
 
 export enum MainMenu {
 	about = "about",
-	colophon = "colophon",
 	darkroom = "darkroom",
 	eff = "eff",
 	seafronts = "seafronts",
 	works = "works",
+	photos = "photos",
 }
 
 const main = [
 	MainMenu.about,
-	MainMenu.colophon,
-	MainMenu.darkroom,
-	MainMenu.seafronts,
-	MainMenu.works,
+	MainMenu.photos,
 ]
 
 export const menuForPath = (path: string) => {
 	switch (path) {
 		case "/about":
 			return MainMenu.about
-		case "/colophon":
-			return MainMenu.colophon
 		case "/darkroom":
 			return MainMenu.darkroom
 		case "/seafronts":
 			return MainMenu.seafronts
 		case "/works":
 			return MainMenu.works
+		case "/photos":
+			return MainMenu.photos
 		default:
 			return MainMenu.about
 	}
@@ -51,14 +48,14 @@ export const pathForMenu = (menu: MainMenu) => {
 	switch (menu) {
 		case MainMenu.about:
 			return "/about"
-		case MainMenu.colophon:
-			return "/colophon"
 		case MainMenu.darkroom:
 			return "/darkroom"
 		case MainMenu.seafronts:
 			return "/seafronts"
 		case MainMenu.works:
 			return "/works"
+		case MainMenu.photos:
+			return "/photos"
 		default:
 			return MainMenu.about
 	}
@@ -106,17 +103,8 @@ export const Component: FC<IMenu> = (props) => {
 			switch (selected) {
 				case MainMenu.about:
 					break
-				case MainMenu.colophon:
+				case MainMenu.photos:
 					setSelected(MainMenu.about)
-					break
-				case MainMenu.darkroom:
-					setSelected(MainMenu.colophon)
-					break
-				case MainMenu.seafronts:
-					setSelected(MainMenu.darkroom)
-					break
-				case MainMenu.works:
-					setSelected(MainMenu.seafronts)
 					break
 			}
 		},
@@ -131,18 +119,7 @@ export const Component: FC<IMenu> = (props) => {
 			if (width === null) return
 			switch (selected) {
 				case MainMenu.about:
-					setSelected(MainMenu.colophon)
-					break
-				case MainMenu.colophon:
-					setSelected(MainMenu.darkroom)
-					break
-				case MainMenu.darkroom:
-					setSelected(MainMenu.seafronts)
-					break
-				case MainMenu.seafronts:
-					setSelected(MainMenu.works)
-					break
-				case MainMenu.works:
+					setSelected(MainMenu.photos)
 					break
 			}
 		},

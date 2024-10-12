@@ -21,7 +21,7 @@ export interface Theme {
 
 const light: Theme = {
 	accent: "red",
-	background: "#0400ed",
+	background: "#000000",
 	backgroundAccent: "#F6F6F4",
 	buttonBackground: "white",
 	buttonBackgroundHover: "#fafafa",
