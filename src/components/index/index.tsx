@@ -3,7 +3,7 @@ import { Component as AboutComponent } from "@components/about";
 import { Component as DarkroomComponent } from "@components/darkroom";
 import { Component as SeafrontsComponent } from "@components/seafronts";
 import { Component as WorksComponent } from "@components/works";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import PhotoPage from 'src/components/photos/index'; // Renamed to avoid conflict
 import {
   Container,
@@ -23,17 +23,6 @@ import {
 } from "@components/menu";
 import useWindowDimensions from "@hooks/useWindowDimensions";
 import { useRouter } from "next/router";
-import styled from 'styled-components';
-
-const ContentWrapper = styled.div`
-  position: relative;
-  overflow: hidden;
-  min-height: calc(100vh - 100px); // Adjust as needed
-  padding: 20px;
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
-`;
 
 export default () => {
   const router = useRouter();
@@ -42,29 +31,11 @@ export default () => {
     menuForPath(router.asPath)
   );
   const [isMobileMenuOpen, setIsMenuMobileOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (router.asPath === "/") router.push("/about");
     else setActiveMenu(menuForPath(router.asPath));
   }, [router]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (contentRef.current && footerRef.current) {
-        const contentRect = contentRef.current.getBoundingClientRect();
-        const footerRect = footerRef.current.getBoundingClientRect();
-        const overlap = Math.max(0, contentRect.bottom - footerRect.top);
-        contentRef.current.style.clipPath = `inset(0 0 ${overlap}px 0)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const content = () => {
     switch (activeMenu) {
@@ -106,7 +77,7 @@ export default () => {
   return (
     <>
       {/* Background Video */}
-      <div style={{ 
+	<div style={{ 
         position: 'fixed', 
         top: 0, 
         left: 0, 
@@ -134,7 +105,7 @@ export default () => {
           <source src="/videos/applevideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+		</div>
       <GrainContainer>
         <Grain />
       </GrainContainer>
@@ -152,16 +123,13 @@ export default () => {
       >
         <Header>Hardeep's Camcorder</Header>
       </HeaderContainer>
-      <ContentWrapper ref={contentRef}>
-        <Container>{content()}</Container>
-      </ContentWrapper>
-      <div ref={footerRef}>
-        <Clock />
-        <PlaybackContainer>
-          <PlaybackControl>Play</PlaybackControl>
-          <Playback>{formatTime(timeSpent)}</Playback>
-        </PlaybackContainer>
-      </div>
+      <Container>{content()}</Container>
+      <Clock />
+      <PlaybackContainer>
+        <PlaybackControl>Play</PlaybackControl>
+        <Playback>{formatTime(timeSpent)}</Playback>
+      </PlaybackContainer>
     </>
   );
 };
+
