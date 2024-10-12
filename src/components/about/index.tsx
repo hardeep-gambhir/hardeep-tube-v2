@@ -132,7 +132,7 @@ export const Component: FC = () => {
           <p></p>
           <br />
           <Blurb>
-            Updated as of October 9, 2024
+            Updated as of October 9, 2024. This website is best viewed on desktop.
           </Blurb>
         {/* </ContentWrapper> */}
       {/* </GlassBackground> */}
