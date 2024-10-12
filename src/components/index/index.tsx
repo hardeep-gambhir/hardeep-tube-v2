@@ -77,8 +77,31 @@ export default () => {
   return (
     <>
       {/* Background Video */}
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', zIndex: -1 }}>
-        <video autoPlay muted loop style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+      <div style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        width: '100%', 
+        height: '100%', 
+        overflow: 'hidden', 
+        zIndex: -1,
+        pointerEvents: 'none'
+      }}>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            objectFit: 'cover',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
+          }}
+        >
           <source src="/videos/applevideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
