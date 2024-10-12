@@ -23,31 +23,6 @@ import {
 } from "@components/menu";
 import useWindowDimensions from "@hooks/useWindowDimensions";
 import { useRouter } from "next/router";
-import styled from 'styled-components';
-
-const MobilePlaybackContainer = styled(PlaybackContainer)`
-  @media (max-width: ${widthToToggleMenuVisibilityOn}px) {
-    background-color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    z-index: 1000;
-  }
-`;
-
-const MobilePlaybackControl = styled(PlaybackControl)`
-  @media (max-width: ${widthToToggleMenuVisibilityOn}px) {
-    color: black;
-  }
-`;
-
-const MobilePlayback = styled(Playback)`
-  @media (max-width: ${widthToToggleMenuVisibilityOn}px) {
-    color: black;
-  }
-`;
 
 export default () => {
   const router = useRouter();
@@ -149,11 +124,11 @@ export default () => {
         <Header>Hardeep's Camcorder</Header>
       </HeaderContainer>
       <Container>{content()}</Container>
-      <MobilePlaybackContainer>
-	  <Clock />
-        <MobilePlaybackControl>Play</MobilePlaybackControl>
-        <MobilePlayback>{formatTime(timeSpent)}</MobilePlayback>
-      </MobilePlaybackContainer>
+      <Clock />
+      <PlaybackContainer>
+        <PlaybackControl>Play</PlaybackControl>
+        <Playback>{formatTime(timeSpent)}</Playback>
+      </PlaybackContainer>
     </>
   );
 };
