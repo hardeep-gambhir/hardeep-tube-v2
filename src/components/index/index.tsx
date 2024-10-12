@@ -149,8 +149,8 @@ export default () => {
         <Header>Hardeep's Camcorder</Header>
       </HeaderContainer>
       <Container>{content()}</Container>
-      <Clock />
       <MobilePlaybackContainer>
+	  <Clock />
         <MobilePlaybackControl>Play</MobilePlaybackControl>
         <MobilePlayback>{formatTime(timeSpent)}</MobilePlayback>
       </MobilePlaybackContainer>
