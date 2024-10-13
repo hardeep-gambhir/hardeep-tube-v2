@@ -76,8 +76,8 @@ export default () => {
 
   return (
     <>
-      {/* Background Video */}
-	<div style={{ 
+      {/* Background Video with Overlay */}
+      <div style={{ 
         position: 'fixed', 
         top: 0, 
         left: 0, 
@@ -105,7 +105,17 @@ export default () => {
           <source src="/videos/applevideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-		</div>
+        {/* Black overlay to darken the video slightly */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.4)', // Adjust the last value (0.2) to control darkness
+          zIndex: 1
+        }} />
+      </div>
       <GrainContainer>
         <Grain />
       </GrainContainer>
@@ -132,4 +142,3 @@ export default () => {
     </>
   );
 };
-
