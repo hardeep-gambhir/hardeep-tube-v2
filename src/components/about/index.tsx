@@ -117,7 +117,7 @@ export const Component: FC = () => {
             <br />
             Some of my best work:
             <ul>
-              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a network of group houses across the world (volunteer) </li>
+              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a network of group houses across the world </li>
               <li>• Developed <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education at 19</li>
               <li>• Built projects as a Builder at <BlurbHighlighted><a href="https://buildspace.so/sf2" target="_blank" rel="noopener noreferrer">Buildspace sf2</a></BlurbHighlighted>; buildspace's last IRL cohort</li>
             </ul>
@@ -132,7 +132,7 @@ export const Component: FC = () => {
           <p></p>
           <br />
           <Blurb>
-            Updated as of October 9, 2024. This website is best viewed on desktop.
+            Updated as of October 9, 2024. This website is best viewed on desktop. Major shout to reh.at for providing the skeleton of this website. 
           </Blurb>
         {/* </ContentWrapper> */}
       {/* </GlassBackground> */}
