@@ -81,7 +81,7 @@ export const Component: FC = () => {
           <Blurb>
 		  <P />
           Hi, I am Hardeep. 
-		  a 20-year-old:&nbsp;
+		  a 22-year-old:&nbsp;
             <Loop delay={100}>
               {ingredients.map((item) => (
                 <div key={item}>
@@ -118,7 +118,7 @@ export const Component: FC = () => {
             Some of my best work:
             <ul>
               <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a network of group houses across the world </li>
-              <li>• Developed <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education at 19</li>
+              <li>• Developed <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
               <li>• Built projects as a Builder at <BlurbHighlighted><a href="https://buildspace.so/sf2" target="_blank" rel="noopener noreferrer">Buildspace sf2</a></BlurbHighlighted>; buildspace's last IRL cohort</li>
             </ul>
           </Blurb>
