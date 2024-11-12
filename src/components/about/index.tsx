@@ -81,7 +81,7 @@ export const Component: FC = () => {
           <Blurb>
 		  <P />
           Hi, I am Hardeep. 
-		  a 22-year-old:&nbsp;
+		  a &nbsp;
             <Loop delay={100}>
               {ingredients.map((item) => (
                 <div key={item}>
