@@ -119,7 +119,7 @@ export const Component: FC = () => {
             <ul>
               <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a cohort-based program for the most ambiitious and driven young entrepreneurs in the world. Globally now in 10 cities.</li>
               <li>• Developed <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
-              <li>• Built projects as a Builder at <BlurbHighlighted><a href="https://buildspace.so/sf2" target="_blank" rel="noopener noreferrer">Buildspace sf2</a></BlurbHighlighted>; buildspace's last IRL cohort</li>
+              <li>• Built projects as a Builder at <BlurbHighlighted><a href="https://buildspace.so/ty-sf2" target="_blank" rel="noopener noreferrer">Buildspace sf2</a></BlurbHighlighted>; buildspace's last IRL cohort. <BlurbHighlighted><a href="https://www.instagram.com/_buildspace/reel/C5H5rJ6rJ54/" target="_blank" rel="noopener noreferrer">Here's</a></BlurbHighlighted> a reel of me that got 650k+ views </li>
             </ul>
           </Blurb>
 
