@@ -92,7 +92,7 @@ export const Component: FC = () => {
             <P />
         
             <P></P>
-            Currently, I am back at Western University in Canada, rethinking life's next steps and heads-down grinding. 
+            Currently, I am back at Western University in Canada, rethinking life's next steps and heads-down grinding on levelling up. 
             <P />
             <br />
             In the past 1 year, I:
@@ -117,7 +117,7 @@ export const Component: FC = () => {
             <br />
             Some of my best work:
             <ul>
-              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a network of group houses across the world </li>
+              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a cohort-based program for the most ambiitious and driven young entrepreneurs in the world. Globally now in 10 cities.</li>
               <li>• Developed <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
               <li>• Built projects as a Builder at <BlurbHighlighted><a href="https://buildspace.so/sf2" target="_blank" rel="noopener noreferrer">Buildspace sf2</a></BlurbHighlighted>; buildspace's last IRL cohort</li>
             </ul>
