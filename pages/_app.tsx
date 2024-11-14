@@ -6,6 +6,7 @@ import Head from "next/head"
 import { useEffect, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import useDarkMode from "use-dark-mode"
+import Script from 'next/script'
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 	const { value } = useDarkMode(false)
@@ -34,6 +35,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 			<ThemeProvider theme={value ? Themes.Dark : Themes.Light}>
 				{content()}
 			</ThemeProvider>
+			<Script src="//www.instagram.com/embed.js" strategy="lazyOnload" />
 		</>
 	)
 
