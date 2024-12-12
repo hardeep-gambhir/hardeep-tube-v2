@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import useDarkMode from "use-dark-mode"
 import Script from 'next/script'
+import CustomCursor from '../src/components/CustomCursor/CustomCursor'
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 	const { value } = useDarkMode(false)
@@ -34,6 +35,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 			</Head>
 			<ThemeProvider theme={value ? Themes.Dark : Themes.Light}>
 				{content()}
+				<CustomCursor />
 			</ThemeProvider>
 			<Script src="//www.instagram.com/embed.js" strategy="lazyOnload" />
 		</>
