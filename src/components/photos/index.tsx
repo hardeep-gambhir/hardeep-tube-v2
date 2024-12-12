@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { P, Blurb } from "@typography/styles";
 
@@ -67,7 +67,29 @@ const collage = [
   // Add more photos as needed
 ];
 
+declare global {
+  interface Window {
+    instgrm: any;
+  }
+}
+
 const PhotoPage: React.FC = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+    script.onload = () => {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <PageContainer>
       <InstagramContainer>
@@ -77,7 +99,6 @@ const PhotoPage: React.FC = () => {
           data-instgrm-version="14"
         >
         </blockquote>
-        <script async src="//www.instagram.com/embed.js"></script>
       </InstagramContainer>
       <CollageContainer>
         {collage.map((photo, index) => (
