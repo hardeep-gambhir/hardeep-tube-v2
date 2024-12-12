@@ -37,7 +37,12 @@ export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
+  // Check if the device is mobile
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
   useEffect(() => {
+    if (isMobile) return; // Skip setting up the cursor on mobile
+
     const moveCursor = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     }
@@ -91,7 +96,9 @@ export default function CustomCursor() {
         element.removeEventListener('mouseleave', handleLinkHoverLeave);
       });
     }
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null; // Do not render the cursor on mobile
 
   return (
     <>
