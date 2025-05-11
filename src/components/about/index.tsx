@@ -65,8 +65,7 @@ export const Component: FC = () => {
 	];
 
   const listening = [
-    "snuck into a conference VIP area to pitch an investor on an idea that was barely a thought",
-    "took a gap year and moved to sf with 2 months of runway",
+    "took a gap year and moved to sf",
     "cancelled a flight to road trip with strangers",
     "booked a flight and left home within an hour of thought",
     "crammed 3 months of Linear Algebra in 7 days",
@@ -92,7 +91,7 @@ export const Component: FC = () => {
             <P />
         
             <P></P>
-            Currently, I am back at Western University in Canada, rethinking life's next steps and heads-down grinding on levelling up. 
+            Currently, I am at Western University in Canada heads-down grinding on levelling up. 
             <P />
             <br />
             In the past 1 year, I:
@@ -117,9 +116,9 @@ export const Component: FC = () => {
             <br />
             Some of my best work:
             <ul>
-              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a cohort-based program for the most ambiitious and driven young entrepreneurs in the world. Globally now in 10 cities.</li>
+              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency India Cohort</a></BlurbHighlighted>; a cohort-based program for the most ambiitious and driven young entrepreneurs in the world. Globally now in 10 cities.</li>
               <li>• Developed research <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
-              <li>• Built projects as a Builder at <BlurbHighlighted><a href="https://buildspace.so/ty-sf2" target="_blank" rel="noopener noreferrer">Buildspace sf2</a></BlurbHighlighted>; buildspace's last IRL cohort. <BlurbHighlighted><a href="https://www.instagram.com/_buildspace/reel/C5H5rJ6rJ54/" target="_blank" rel="noopener noreferrer">Here's</a></BlurbHighlighted> a reel of me that got 650k+ views </li>
+              <li>• Giving out grants for ambitious and driven young entrepreneurs at <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost Fellowship(India and Japan)</a></BlurbHighlighted></li>
             </ul>
           </Blurb>
 
