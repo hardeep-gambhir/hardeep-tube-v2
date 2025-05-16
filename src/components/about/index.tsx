@@ -91,7 +91,7 @@ export const Component: FC = () => {
             <P />
         
             <P></P>
-            Currently, I am at Western University in Canada heads-down grinding on levelling up. 
+            Currently, I am travelling to 30 countries in the next 4 months to bring out the stories of the most exceptional people to the world. Follow my journey on any platforms.  
             <P />
             <br />
             In the past 1 year, I:
@@ -116,17 +116,16 @@ export const Component: FC = () => {
             <br />
             Some of my best work:
             <ul>
-              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency India Cohort</a></BlurbHighlighted>; a cohort-based program for the most ambiitious and driven young entrepreneurs in the world. Globally now in 10 cities.</li>
+              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a cohort-based program for the most ambiitious and driven young entrepreneurs in the world. Globally now in 10 cities.</li>
               <li>• Developed research <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
-              <li>• Giving out grants for ambitious and driven young entrepreneurs at <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost Fellowship(India and Japan)</a></BlurbHighlighted></li>
+              <li>• Giving out grants for ambitious and driven young entrepreneurs at <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost Fellowship.</a></BlurbHighlighted> Check out this <BlurbHighlighted><a href="https://x.com/hardeep_gambhir/status/1896998696698699915" target="_blank" rel="noopener noreferrer">video</a></BlurbHighlighted> I made for the grant program we launched.</li>
             </ul>
           </Blurb>
 
           <br />
           <br />
-
           <Blurb>
-            <BlurbHighlighted><a href="https://x.com/hardeep_gambhir" target="_blank" rel="noopener noreferrer">Twitter (preferred)</a></BlurbHighlighted> <BlurbHighlighted><a href="mailto:hardeep.gambhir23@gmail.com">Email</a></BlurbHighlighted> <BlurbHighlighted><a href="https://curius.app/hardeep-gambhir" target="_blank" rel="noopener noreferrer">Curius</a></BlurbHighlighted> <BlurbHighlighted><a href="https://hardeepgambhir.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></BlurbHighlighted>
+            <BlurbHighlighted><a href="https://x.com/hardeep_gambhir" target="_blank" rel="noopener noreferrer">Twitter (preferred)</a></BlurbHighlighted> <BlurbHighlighted><a href="mailto:hardeep.gambhir23@gmail.com">Email</a></BlurbHighlighted> <BlurbHighlighted><a href="https://curius.app/hardeep-gambhir" target="_blank" rel="noopener noreferrer">Curius</a></BlurbHighlighted> <BlurbHighlighted><a href="https://hardeepgambhir.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></BlurbHighlighted> <BlurbHighlighted><a href="https://www.instagram.com/hardeep_gambhir/" target="_blank" rel="noopener noreferrer">Instagram</a></BlurbHighlighted> <BlurbHighlighted><a href="https://www.linkedin.com/in/hardeep-gambhir/" target="_blank" rel="noopener noreferrer">LinkedIn</a></BlurbHighlighted>
           </Blurb>
           <p></p>
           <br />
