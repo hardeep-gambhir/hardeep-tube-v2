@@ -206,9 +206,10 @@ const RecommitmentPage: FC = () => {
                 and we will. we will make not my dreams come true, but <BlurbHighlighted>our</BlurbHighlighted> dreams.<br/><br/>
                 two weeks ago, i sent you this blog about this guy talking about his marriage and one of things he mentioned in the blog was you need to consistently recommit in a relationship, in a marriage.<br/><br/>
                 recommit you want to stay together. reevaluate and recommit.<br/><br/>
-                this letter is me recommitting to you. because i have never felt like this before.<br/><br/>
-                just the thought of you makes my body feel a certain way.<br/><br/>
-                i can't wait to sleep next to you every day soon. i love you.<br/><br/>
+                this letter is me recommitting to you. there are always other options like we talked before. someone more attractive, someone more intelligent, someone more wealthy, someone with more experience, someone with more connections, someone with more opportunities or someone with more potential.<br/><br/>
+                but i choose you because i have never felt the mix of all these qualities in one person so perfectly compliment me. <br/><br/>
+                and i hope we can continue to grow together, to be the best versions of ourselves, to be the best versions of each other, to be the best versions of us. to keep complimenting each other and figure out ways to compliment each other more<br/><br/>
+               that's about all we can do, try to make this work for both of our needs, and i hope this works out for us. <br/><br/>
                 <BlurbHighlighted>— hardeep</BlurbHighlighted>
                 <P />
               </Blurb>
