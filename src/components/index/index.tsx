@@ -131,7 +131,7 @@ export default () => {
           setIsMenuMobileOpen(!isMobileMenuOpen);
         }}
       >
-        <Header>Hardeep's Filming Space</Header>
+        <Header>Hardeep's Space</Header>
       </HeaderContainer>
       <Container>{content()}</Container>
       <Clock />

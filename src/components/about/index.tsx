@@ -54,14 +54,12 @@ const WrappingBlurbHighlighted = styled(BlurbHighlighted)`
 `;
 
 export const Component: FC = () => {
-	const ingredients = [
-	  "community-builder",
-	  "software engineer",
-	  "product-designer",
-	  "artist",
-	  "videographer",
-	  "cinematographer",
-	  "writer",
+	const ingredients = [,
+    "communities",
+    "essays",
+    "films",
+    "digital art",
+	  "software",
 	];
 
   const listening = [
@@ -80,7 +78,7 @@ export const Component: FC = () => {
           <Blurb>
 		  <P />
           Hi, I am Hardeep. 
-		  a &nbsp;
+		  a maker of:&nbsp;
             <Loop delay={100}>
               {ingredients.map((item) => (
                 <div key={item}>
@@ -91,10 +89,10 @@ export const Component: FC = () => {
             <P />
         
             <P></P>
-            Currently, I am travelling to 30 countries in the next 4 months to bring out the stories of the most exceptional people to the world. Follow my journey on any platforms.  
+            This summer, I travelled the world to 8 countries in 2 months to host events and make videos on the most exceptional people of our generation. You can see my work <BlurbHighlighted><a href="https://www.instagram.com/hardeep_gambhir/reels/" target="_blank" rel="noopener noreferrer">here.</a></BlurbHighlighted>
             <P />
             <br />
-            In the past 1 year, I:
+            In the past 2 years, I:
             <P />
             <Loop delay={2000}>
               {listening.map((item) => (
@@ -116,9 +114,9 @@ export const Component: FC = () => {
             <br />
             Some of my best work:
             <ul>
-              <li>• Founded <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>; a cohort-based program for the most ambiitious and driven young entrepreneurs in the world. Globally now in 10 cities.</li>
+              <li>• Building <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost</a></BlurbHighlighted>. We host events and retreats, give grants and invest in exceptional people of our generation. </li>
+              <li>• Worked at <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>. Helped scale it to 10 cities. Residents company are valued at $500M+</li>
               <li>• Developed research <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
-              <li>• Giving out grants for ambitious and driven young entrepreneurs at <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost Fellowship.</a></BlurbHighlighted> Check out this <BlurbHighlighted><a href="https://x.com/hardeep_gambhir/status/1896998696698699915" target="_blank" rel="noopener noreferrer">video</a></BlurbHighlighted> I made for the grant program we launched.</li>
             </ul>
           </Blurb>
 
@@ -130,7 +128,7 @@ export const Component: FC = () => {
           <p></p>
           <br />
           <Blurb>
-            Updated as of October 9, 2024. This website is best viewed on desktop. Major shout to reh.at for providing the skeleton of this website. 
+            Updated as of Sept 18, 2025. This website is best viewed on desktop. Major shout to reh.at for providing the skeleton of this website. 
           </Blurb>
         {/* </ContentWrapper> */}
       {/* </GlassBackground> */}
