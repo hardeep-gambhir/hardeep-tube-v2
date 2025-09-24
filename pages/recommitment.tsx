@@ -241,8 +241,9 @@ const RecommitmentPage: FC = () => {
                 but i choose you because i have never felt the mix of all these qualities in one person so perfectly compliment me. <br/><br/>
                 and i hope we can continue to grow together, to be the best versions of ourselves, to be the best versions of each other, to be the best versions of us. to keep complimenting each other and figure out ways to compliment each other more<br/><br/>
                that's about all we can do, try to make this work for both of our needs, and i hope this works out for us. <br/><br/>
-                <BlurbHighlighted>— hardeep</BlurbHighlighted>
-                <P />
+               until then i recommit to you for the future. to build our dreams together, and to be the person who helps you become the best version of yourself. <br/><br/>
+               <BlurbHighlighted>— hardeep</BlurbHighlighted>
+               <P />
               </Blurb>
             </TextContent>
           </TwoColumn>
