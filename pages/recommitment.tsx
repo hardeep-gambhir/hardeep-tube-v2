@@ -175,6 +175,37 @@ const RecommitmentPage: FC = () => {
                 <P />
                 lily essay #3<br/><br/>
                 dear love,<br/><br/>
+                <div style={{ 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  marginBottom: '24px',
+                  padding: '16px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  borderRadius: '12px',
+                  backdropFilter: 'blur(4px)'
+                }}>
+                  <div style={{ 
+                    color: '#fff', 
+                    fontSize: '1rem', 
+                    marginBottom: '12px',
+                    textAlign: 'center',
+                    fontStyle: 'italic'
+                  }}>
+                    play this while you read
+                  </div>
+                  <audio 
+                    controls 
+                    loop 
+                    style={{
+                      width: '100%',
+                      maxWidth: '300px'
+                    }}
+                  >
+                    <source src="/music/romantic2.mp3" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div><br/>
                 i think you know me enough by now to know i think through things deeply to optimize for the long-term the best.<br/><br/>
                 recently (probably because the frequency or the length of our calls increasing), i find myself asking the question why do i have this unusual urge to call you every day and why do i catch myself often thinking about you during the day.<br/><br/>
                 it might not be a killing question for you since you've been in a relationship before and fallen for some potential life-partners in the past — i am not sure.<br/><br/>
