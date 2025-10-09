@@ -128,7 +128,8 @@ export const Component: FC = () => {
           <p></p>
           <br />
           <Blurb>
-            Updated as of Sept 18, 2025. This website is best viewed on desktop. Major shout to reh.at for providing the skeleton of this website. 
+            Shout to reh.at for providing the skeleton of this website. 
+            If you are looking for my headshots for a press release, you can find them <BlurbHighlighted><a href="https://drive.google.com/drive/folders/1cUNGvh4ZzAwWbxb2eFeFsYnor5jboRNb?usp=sharing" target="_blank" rel="noopener noreferrer">here</a></BlurbHighlighted>.
           </Blurb>
         {/* </ContentWrapper> */}
       {/* </GlassBackground> */}
