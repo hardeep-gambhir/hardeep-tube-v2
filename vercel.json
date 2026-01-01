@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/portfolio",
+      "destination": "https://interlust.notion.site/portfolio?source=copy_link",
+      "permanent": false
+    }
+  ]
+}
+
