@@ -54,20 +54,14 @@ const WrappingBlurbHighlighted = styled(BlurbHighlighted)`
 `;
 
 export const Component: FC = () => {
-	const ingredients = [,
-    "communities",
-    "essays",
-    "films",
-    "digital art",
-	  "software",
-	];
-
   const listening = [
-    "took a gap year and moved to sf",
-    "cancelled a flight to road trip with strangers",
-    "booked a flight and left home within an hour of thought",
-    "crammed 3 months of Linear Algebra in 7 days",
-    "snuck into too many classes at UC Berkeley",
+    "wrote short stories on Wattpad at 11",
+    "rooted my android phone, used Kali Linux to try hacking, emulated software using WineSkin at 13",
+    "built a pinterest account with 1.2M monthly visitors at 15",
+    "started digital art and video editing at 16",
+    "crammed 3 months of Linear Algebra in 7 days in college",
+    "built a global community for exceptional people of our generation at 21",
+    "hosted a film festival without having been to one before at 23",
   ];
 
   return (
@@ -78,21 +72,13 @@ export const Component: FC = () => {
           <Blurb>
 		  <P />
           Hi, I am Hardeep. 
-		  a maker of:&nbsp;
-            <Loop delay={100}>
-              {ingredients.map((item) => (
-                <div key={item}>
-                  <BlurbHighlighted>{item}.</BlurbHighlighted>
-                </div>
-              ))}
-            </Loop>
+		  a maker of tasteful: communities, essays, films, digital art, events, software.
             <P />
         
             <P></P>
-            This summer, I travelled the world to 8 countries in 2 months to host events and make videos on the most exceptional people of our generation. You can see my work <BlurbHighlighted><a href="https://www.instagram.com/hardeep_gambhir/reels/" target="_blank" rel="noopener noreferrer">here.</a></BlurbHighlighted>
-            <P />
+Currently, I am contracting to grow AI video-generation startups and nomading the world.       <P />
             <br />
-            In the past 2 years, I:
+            In the past, I:
             <P />
             <Loop delay={2000}>
               {listening.map((item) => (
@@ -102,20 +88,12 @@ export const Component: FC = () => {
               ))}
             </Loop>
             <P />
-            <br />
-            To know me (har)deeply beyond my accomplishments, check out: <br />
-            <BlurbHighlighted>
-              <a href="https://hardeeps-iphone-notes.super.site/" target="_blank" rel="noopener noreferrer">notes from my iPhone</a>
-            </BlurbHighlighted>.
-          </Blurb>
-
-          <br />
+            </Blurb>
           <Blurb>
-            <br />
             Some of my best work:
             <ul>
-              <li>• Building <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost</a></BlurbHighlighted>. We host events and retreats, give grants and invest in exceptional people of our generation. </li>
-              <li>• Worked at <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>. Helped scale it to 10 cities. Residents company are valued at $500M+</li>
+              <li>• Building <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost</a></BlurbHighlighted>. We host events and lab spaces for exceptional creatives around the world.. </li>
+              <li>• Built <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>. Helped scale it to 10 cities. Residents company are valued at $2B+</li>
               <li>• Developed research <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
             </ul>
           </Blurb>
@@ -129,11 +107,12 @@ export const Component: FC = () => {
           <br />
           <Blurb>
             Shout to reh.at for providing the skeleton of this website. 
+            See my notes app through <BlurbHighlighted><a href="https://hardeeps-iphone-notes.super.site/" target="_blank" rel="noopener noreferrer">here</a></BlurbHighlighted>. 
             If you are looking for my headshots for a press release, you can find them <BlurbHighlighted><a href="https://drive.google.com/drive/folders/1cUNGvh4ZzAwWbxb2eFeFsYnor5jboRNb?usp=sharing" target="_blank" rel="noopener noreferrer">here</a></BlurbHighlighted>.
-          </Blurb>
+            </Blurb>
         {/* </ContentWrapper> */}
       {/* </GlassBackground> */}
       <P />
     </ContentContainer>
   );
-}
+};
