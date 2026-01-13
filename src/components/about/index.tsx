@@ -92,7 +92,11 @@ Currently, I am contracting to grow AI video-generation startups and nomading th
           <Blurb>
             Some of my best work:
             <ul>
-              <li>• Building <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost</a></BlurbHighlighted>. We host events and lab spaces for exceptional creatives around the world.. </li>
+              <li>
+                • Building <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost</a></BlurbHighlighted>. We hosted the recent <BlurbHighlighted>
+                  <a href="https://www.mumbaifilmfestival.ai/" target="_blank" rel="noopener noreferrer">Mumbai AI Film Festival</a>
+                </BlurbHighlighted>.
+              </li>
               <li>• Built <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>. Helped scale it to 10 cities. Residents company are valued at $2B+</li>
               <li>• Developed research <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
             </ul>
