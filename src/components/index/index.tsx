@@ -3,6 +3,7 @@ import { Component as AboutComponent } from "@components/about";
 import { Component as DarkroomComponent } from "@components/darkroom";
 import { Component as SeafrontsComponent } from "@components/seafronts";
 import { Component as WorksComponent } from "@components/works";
+import { Component as EssaysComponent } from "@components/essays";
 import { useEffect, useState } from "react";
 import PhotoPage from 'src/components/photos/index'; // Renamed to avoid conflict
 import {
@@ -43,6 +44,8 @@ export default () => {
         return <AboutComponent />;
       case MainMenu.photos:
         return <PhotoPage />; // Photos component
+      case MainMenu.essays:
+        return <EssaysComponent />;
       case MainMenu.darkroom:
         return <DarkroomComponent />;
       case MainMenu.seafronts:

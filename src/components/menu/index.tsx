@@ -20,11 +20,13 @@ export enum MainMenu {
 	seafronts = "seafronts",
 	works = "works",
 	photos = "photos",
+	essays = "essays",
 }
 
 const main = [
 	MainMenu.about,
 	MainMenu.photos,
+	MainMenu.essays,
 ]
 
 export const menuForPath = (path: string) => {
@@ -39,6 +41,8 @@ export const menuForPath = (path: string) => {
 			return MainMenu.works
 		case "/photos":
 			return MainMenu.photos
+		case "/essays":
+			return MainMenu.essays
 		default:
 			return MainMenu.about
 	}
@@ -56,6 +60,8 @@ export const pathForMenu = (menu: MainMenu) => {
 			return "/works"
 		case MainMenu.photos:
 			return "/photos"
+		case MainMenu.essays:
+			return "/essays"
 		default:
 			return MainMenu.about
 	}
@@ -106,6 +112,9 @@ export const Component: FC<IMenu> = (props) => {
 				case MainMenu.photos:
 					setSelected(MainMenu.about)
 					break
+				case MainMenu.essays:
+					setSelected(MainMenu.photos)
+					break
 			}
 		},
 		{ keydown: true },
@@ -120,6 +129,9 @@ export const Component: FC<IMenu> = (props) => {
 			switch (selected) {
 				case MainMenu.about:
 					setSelected(MainMenu.photos)
+					break
+				case MainMenu.photos:
+					setSelected(MainMenu.essays)
 					break
 			}
 		},
