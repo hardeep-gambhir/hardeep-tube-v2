@@ -1,12 +1,10 @@
 import styled from "styled-components"
 
 export const Video = styled.video`
-	height: 495px;
-	width: 495px;
+	width: 100%;
+	max-width: 495px;
+	height: auto;
+	aspect-ratio: 1;
 	border: 5px solid white;
-	margin: 10px 0 10px 0;
-	@media only screen and (max-width: 650px) {
-		height: calc(90vw - 20px);
-		width: calc(90vw - 20px);
-	}
+	margin: 10px 0;
 `

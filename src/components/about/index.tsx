@@ -1,122 +1,120 @@
-import { FC } from "react"
-import TextLoop from "react-text-loop"
+import { FC, useEffect, useState } from "react"
 import { ContentContainer } from "@components/index/styles"
-import { P, Blurb, BlurbHighlighted } from "@typography/styles"
-import styled, { keyframes } from "styled-components"
+import { Blurb, BlurbHighlighted } from "@typography/styles"
+import styled from "styled-components"
 
-const Loop: FC<{
-	delay?: number
-}> = (props: any) => {
-	return (
-		<TextLoop delay={props.delay} interval={4000}>
-			{props.children}
-		</TextLoop>
-	)
+const facts = [
+  "wrote short stories on Wattpad at 11.",
+  "built a Pinterest account with 1.2M monthly visitors at 15.",
+  "started digital art and video editing at 16.",
+  "crammed three months of linear algebra into seven days in college.",
+  "learned three years of high school material plus AP math in eight months, after finishing grade 12.",
+]
+
+// Overlapping grid cells reserve the height of the longest fact at any width.
+// Only opacity and transform animate, so the text below never jumps.
+const FactContainer = styled.div`
+  display: grid;
+  isolation: isolate;
+  margin: 0.8em 0 0;
+  padding: 5px 6px 8px;
+`
+
+const Fact = styled.div<{ $active: boolean }>`
+  grid-area: 1 / 1;
+  min-width: 0;
+  align-self: start;
+  opacity: ${props => props.$active ? 1 : 0};
+  transform: translateY(${props => props.$active ? "0" : "10px"});
+  transition: opacity 300ms ease, transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: ${props => props.$active ? "160ms" : "0ms"};
+  pointer-events: ${props => props.$active ? "auto" : "none"};
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    transform: none;
+  }
+`
+
+const RotatingFact = () => {
+  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)")
+    let timer: ReturnType<typeof setInterval> | undefined
+    const configure = () => {
+      if (timer) clearInterval(timer)
+      if (!motion.matches) {
+        timer = setInterval(() => {
+          if (!document.hidden) setIndex(value => (value + 1) % facts.length)
+        }, 6500)
+      }
+    }
+    configure()
+    motion.addEventListener("change", configure)
+    return () => {
+      if (timer) clearInterval(timer)
+      motion.removeEventListener("change", configure)
+    }
+  }, [])
+  return <FactContainer data-testid="rotating-facts">
+    {facts.map((fact, item) => <Fact key={fact} $active={item === index} aria-hidden={item !== index}>
+      <BlurbHighlighted>{fact}</BlurbHighlighted>
+    </Fact>)}
+  </FactContainer>
 }
 
-// const ContentContainer = styled.div`
-//   // Remove any background color if present
-//   background: transparent;
-//   // Add any other styles you need for ContentContainer
-// `;
+const Biography = styled(Blurb).attrs({ as: "div" })`
+  display: block;
+  p { margin-bottom: 1.25em; }
+`
 
-// const GlassBackground = styled.div`
-//   background: rgba(255, 255, 255, 0.1);
-// //   backdrop-filter: blur(15px); // Increased blur for a more blurry effect
-// //   -webkit-backdrop-filter: blur(50px); // Increased blur for a more blurry effect
-//   border-radius: 9px;
-//   border: 1px solid rgba(255, 255, 255, 0.18);
-//   padding: 30px;
+const Highlights = styled.ul`
+  margin: 0 0 1.75em;
+  li { position: relative; padding-left: 1em; margin-bottom: 1em; }
+  li::before { content: "•"; position: absolute; left: 0; }
+`
 
-//   box-sizing: border-box;
-//   width: 98%;
-//   max-width: 1000px;
-//   margin: 0 auto;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-//   overflow: hidden; // This will ensure content doesn't overflow the rounded corners
-// `;
+const Socials = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1em 0 2em;
+  a { display: inline-block; }
+`
 
-const ContentWrapper = styled.div`
-  width: 40%;
-  padding: 10px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  position: relative;
-  z-index: 1;
-`;
+const Link: FC<{ href: string }> = ({ href, children }) => (
+  <BlurbHighlighted><a href={href} {...(href.startsWith("https:") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{children}</a></BlurbHighlighted>
+)
 
-const WrappingBlurbHighlighted = styled(BlurbHighlighted)`
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-`;
-
-export const Component: FC = () => {
-  const listening = [
-    "wrote short stories on Wattpad at 11",
-    "rooted my android phone, used Kali Linux to try hacking, emulated software using WineSkin at 13",
-    "built a pinterest account with 1.2M monthly visitors at 15",
-    "started digital art and video editing at 16",
-    "crammed 3 months of Linear Algebra in 7 days in college",
-    "built a global community for exceptional people of our generation at 21",
-    "hosted a film festival without having been to one before at 23",
-  ];
-
-  return (
-    <ContentContainer>
-      {/* <GlassBackground> */}
-        {/* <ContentWrapper> */}
-          <P />
-          <Blurb>
-		  <P />
-          Hi, I am Hardeep. 
-		  a maker of tasteful: communities, essays, films, digital art, events, software.
-            <P />
-        
-            <P></P>
-Currently, I am contracting to grow AI video-generation startups and nomading the world.       <P />
-            <br />
-            In the past, I:
-            <P />
-            <Loop delay={2000}>
-              {listening.map((item) => (
-                <div key={item}>
-                  <WrappingBlurbHighlighted>{item.trim()}.</WrappingBlurbHighlighted>
-                </div>
-              ))}
-            </Loop>
-            <P />
-            </Blurb>
-          <Blurb>
-            Some of my best work:
-            <ul>
-              <li>
-                • Building <BlurbHighlighted><a href="https://localhosthq.com/" target="_blank" rel="noopener noreferrer">LocalHost</a></BlurbHighlighted>. We hosted the recent <BlurbHighlighted>
-                  <a href="https://www.mumbaifilmfestival.ai/" target="_blank" rel="noopener noreferrer">Mumbai AI Film Festival</a>
-                </BlurbHighlighted>.
-              </li>
-              <li>• Built <BlurbHighlighted><a href="https://livetheresidency.com" target="_blank" rel="noopener noreferrer">The Residency</a></BlurbHighlighted>. Helped scale it to 10 cities. Residents company are valued at $2B+</li>
-              <li>• Developed research <BlurbHighlighted><a href="https://numeracyscreener.com" target="_blank" rel="noopener noreferrer">software</a></BlurbHighlighted> for the Ontario Ministry of Education</li>
-            </ul>
-          </Blurb>
-
-          <br />
-          <br />
-          <Blurb>
-            <BlurbHighlighted><a href="https://x.com/hardeep_gambhir" target="_blank" rel="noopener noreferrer">Twitter (preferred)</a></BlurbHighlighted> <BlurbHighlighted><a href="mailto:hardeep.gambhir23@gmail.com">Email</a></BlurbHighlighted> <BlurbHighlighted><a href="https://curius.app/hardeep-gambhir" target="_blank" rel="noopener noreferrer">Curius</a></BlurbHighlighted> <BlurbHighlighted><a href="https://hardeepgambhir.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></BlurbHighlighted> <BlurbHighlighted><a href="https://www.instagram.com/hardeep_gambhir/" target="_blank" rel="noopener noreferrer">Instagram</a></BlurbHighlighted> <BlurbHighlighted><a href="https://www.linkedin.com/in/hardeep-gambhir/" target="_blank" rel="noopener noreferrer">LinkedIn</a></BlurbHighlighted>
-          </Blurb>
-          <p></p>
-          <br />
-          <Blurb>
-            Shout to reh.at for providing the skeleton of this website. 
-            See my notes app through <BlurbHighlighted><a href="https://hardeeps-iphone-notes.super.site/" target="_blank" rel="noopener noreferrer">here</a></BlurbHighlighted>. 
-            If you are looking for my headshots for a press release, you can find them <BlurbHighlighted><a href="https://drive.google.com/drive/folders/1cUNGvh4ZzAwWbxb2eFeFsYnor5jboRNb?usp=sharing" target="_blank" rel="noopener noreferrer">here</a></BlurbHighlighted>.
-            </Blurb>
-        {/* </ContentWrapper> */}
-      {/* </GlassBackground> */}
-      <P />
-    </ContentContainer>
-  );
-};
+export const Component: FC = () => (
+  <ContentContainer>
+    <Biography>
+      <p>hi, i’m hardeep. by way of new delhi, toronto, san francisco, bangalore, and tokyo.</p>
+      <p>i build places for exceptional people to find each other. lately, that means <Link href="https://localhosthq.com/">LocalHost</Link> and ai film festivals.</p>
+      <p>a few things i’ve done:</p>
+      <Highlights>
+        <li>threw a film festival at mumbai’s royal opera house in 25 days. had never attended one. 1,265 teams applied. then we held festivals with the government of india in delhi, and 46 floors above tokyo.</li>
+        <li>moved to san francisco at 19 with $2,120 and a cold dm. helped build <Link href="https://livetheresidency.com">the residency</Link>, backed by sam altman, and scaled it to seven cities.</li>
+        <li>turned ~200 cold emails into $80,000 in grants and three months across 30 countries.</li>
+        <li>used my scholarship money to give microgrants to people i thought were exceptional.</li>
+      </Highlights>
+      <section aria-label="Earlier adventures">
+        <div>before that, i:</div>
+        <RotatingFact />
+      </section>
+      <p>still writing, still moving around, still finding people i want to make things with.</p>
+      <p>outside of work, i’m usually snowboarding, climbing, lifting, reading, or finding an excuse to catch a flight. i spend a lot of time following rabbit holes on <Link href="https://curius.app/hardeep-gambhir">curius</Link>, reading and writing essays, and doing knowledge work with my hermes agent.</p>
+      <p>recurring rabbit holes: china, lee kuan yew, how ai changes economics, how media businesses make money, and how stories shape what people believe. i love pixar and find elon fascinating—<em>the book of elon</em> is exceptional.</p>
+      <p>people whose thinking i keep coming back to: lulu cheng meservey, eric jorgenson, tyler cowen, and anu atluru.</p>
+      <p>twitter is the fastest way to reach me.</p>
+      <Socials>
+        <Link href="https://x.com/hardeep_gambhir">twitter (preferred)</Link>
+        <Link href="mailto:hardeep.gambhir23@gmail.com">email</Link>
+        <Link href="https://curius.app/hardeep-gambhir">curius</Link>
+        <Link href="https://hardeepgambhir.substack.com">substack</Link>
+        <Link href="https://www.instagram.com/hardeep_gambhir/">instagram</Link>
+        <Link href="https://www.linkedin.com/in/hardeep-gambhir/">linkedin</Link>
+      </Socials>
+      <p>shoutout to <Link href="https://reh.at">reh.at</Link> for the skeleton of this site. <Link href="https://hardeeps-iphone-notes.super.site/">notes app</Link> · <Link href="https://drive.google.com/drive/folders/1cUNGvh4ZzAwWbxb2eFeFsYnor5jboRNb?usp=sharing">press headshots</Link></p>
+    </Biography>
+  </ContentContainer>
+)

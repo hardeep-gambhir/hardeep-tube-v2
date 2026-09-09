@@ -2,12 +2,18 @@ import { grain } from "@components/grain"
 import styled, { keyframes } from "styled-components"
 
 export const Container = styled.div`
-	height: 100vh;
-	width: 100vw;
+	min-height: 100vh;
+	min-height: 100svh;
+	width: 100%;
+	padding: 90px 180px 110px;
+	@media (max-width: 900px) {
+		padding: calc(88px + env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) calc(100px + env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+	}
 	display: grid;
 	place-items: center;
 	align-content: center;
 	grid-gap: 20px;
+	@media (max-width: 900px) { align-content: start; }
 `
 
 export const staticGrain = keyframes`
@@ -51,27 +57,23 @@ export const Grain = styled.div`
 `
 
 export const ContentContainer = styled.div`
-	width: 500px;
-	::-webkit-scrollbar {
-		display: none;
-	}
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	overflow: scroll;
-	@media only screen and (max-width: 500px) {
-		height: 100vh;
-		width: 100vw;
-		padding: 18vh 20px 18vh 20px;
-	}
+	width: 100%;
+	max-width: 500px;
+	min-width: 0;
+	overflow-wrap: anywhere;
+	ul { list-style: none; }
 `
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.button`
+	border: 0;
+	background: transparent;
+	padding-top: env(safe-area-inset-top);
 	display: grid;
 	place-items: center;
 	width: 100vw;
 	position: fixed;
 	top: 0px;
-	z-index: 2;
+	z-index: 101;
 	@media only screen and (max-width: 900px) {
 		background: ${(props) => props.theme.text};
 		cursor: pointer;
@@ -100,7 +102,9 @@ export const PlaybackContainer = styled.div`
 	right: 30px;
 	bottom: 20px;
 	justify-items: end;
-	@media only screen and (max-width: 500px) {
+	@media only screen and (max-width: 900px) {
+		display: none;
+		right: 16px;
 		bottom: calc(1rem + env(safe-area-inset-bottom));
 	}
 `
@@ -117,7 +121,7 @@ export const VCREdgeOverlayTextStyle = styled.h2`
 		background: ${(props) => props.theme.text};
 	}
 	@media only screen and (max-width: 500px) {
-		font-size: 18px;
+		font-size: 14px;
 	}
 `
 

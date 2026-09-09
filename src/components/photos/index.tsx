@@ -20,23 +20,30 @@ const PageContainer = styled.div`
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  max-width: 1200px;
+  width: 100%;
+  min-width: 0;
+  max-width: 900px;
+  @media (max-width: 1100px) { flex-direction: column; align-items: center; padding: 0; }
   margin: 0 auto;
 `;
 
 const InstagramContainer = styled.div`
   flex-shrink: 0;
-  width: 350px;
-  margin-top: 60px;
+  width: 100%;
+  max-width: 350px;
+  min-width: 0;
+  .instagram-media { min-width: 0 !important; width: 100% !important; max-width: 100% !important; }
+  margin-top: 0;
 `;
 
 const CollageContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @media (max-width: 400px) { grid-template-columns: minmax(0, 1fr); }
   gap: 0;
   width: 100%;
   max-width: 500px;
-  margin-top: 60px;
+  margin-top: 0;
   column-gap: 20px;
 `;
 

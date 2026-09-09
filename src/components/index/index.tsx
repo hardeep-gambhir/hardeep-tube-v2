@@ -129,12 +129,16 @@ export default () => {
         onActiveMenuChange={setActiveMenu}
       />
       <HeaderContainer
+        type="button"
+        aria-expanded={isMobileMenuOpen}
+        aria-controls="mobile-navigation"
+        aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
         onClick={() => {
           if (width !== null && width > widthToToggleMenuVisibilityOn) return;
           setIsMenuMobileOpen(!isMobileMenuOpen);
         }}
       >
-        <Header>Hardeep's Space</Header>
+        <Header>Hardeep's Space{width !== null && width <= widthToToggleMenuVisibilityOn ? (isMobileMenuOpen ? ' ×' : ' ☰') : ''}</Header>
       </HeaderContainer>
       <Container>{content()}</Container>
       <Clock />

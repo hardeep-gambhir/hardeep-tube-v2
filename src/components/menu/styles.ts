@@ -23,7 +23,14 @@ export const MenuItem = styled.div`
 	letter-spacing: 0.2rem;
 `
 
-export const MenuTitleInactive = styled.h3`
+export const MenuTitleInactive = styled.button`
+	border: 0;
+	background: transparent;
+	text-align: left;
+	text-transform: inherit;
+	font-size: 1.17em;
+	font-weight: bold;
+	min-height: 44px;
 	cursor: pointer;
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
@@ -36,7 +43,7 @@ export const MenuTitleActive = styled(MenuTitleInactive)`
 	color: ${(props) => props.theme.background};
 `
 
-export const MobileMenu = styled.div`
+export const MobileMenu = styled.nav`
 	align-content: center;
 	background: ${(props) => props.theme.background};
 	display: grid;
@@ -44,7 +51,11 @@ export const MobileMenu = styled.div`
 	text-transform: uppercase;
 	width: 100vw;
 	height: 100vh;
-	position: absolute;
+	height: 100dvh;
+	inset: 0;
+	padding: 90px 24px 100px;
+	overflow-y: auto;
+	position: fixed;
 	z-index: 100;
 `
 
