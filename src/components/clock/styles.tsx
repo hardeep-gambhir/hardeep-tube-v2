@@ -8,7 +8,8 @@ export const DateTimeContainer = styled.div`
 	left: 25px;
 	bottom: 20px;
 	position: fixed;
-	@media only screen and (max-width: 500px) {
+	@media only screen and (max-width: 900px) {
+		display: none;
 		left: 20px;
 		bottom: calc(1rem + env(safe-area-inset-bottom));
 	}

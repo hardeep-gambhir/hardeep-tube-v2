@@ -1,18 +1,23 @@
-import { FC } from "react"
-import TextLoop from "react-text-loop"
+import { FC, useEffect, useState } from "react"
+
 import { ContentContainer } from "@components/index/styles"
 import { P, Blurb, BlurbHighlighted } from "@typography/styles"
 import styled, { keyframes } from "styled-components"
 
-const Loop: FC<{
-	delay?: number
-}> = (props: any) => {
-	return (
-		<TextLoop delay={props.delay} interval={4000}>
-			{props.children}
-		</TextLoop>
-	)
+const RotatingFact: FC<{ items: string[] }> = ({ items }) => {
+  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const timer = window.setInterval(() => setIndex(value => (value + 1) % items.length), 4000)
+    return () => window.clearInterval(timer)
+  }, [items.length])
+  return <FactContainer><WrappingBlurbHighlighted>{items[index]}.</WrappingBlurbHighlighted></FactContainer>
 }
+
+const FactContainer = styled.div`
+  min-height: 7em;
+  @media (min-width: 501px) { min-height: 4.5em; }
+`;
 
 // const ContentContainer = styled.div`
 //   // Remove any background color if present
@@ -80,13 +85,7 @@ Currently, I am contracting to grow AI video-generation startups and nomading th
             <br />
             In the past, I:
             <P />
-            <Loop delay={2000}>
-              {listening.map((item) => (
-                <div key={item}>
-                  <WrappingBlurbHighlighted>{item.trim()}.</WrappingBlurbHighlighted>
-                </div>
-              ))}
-            </Loop>
+            <RotatingFact items={listening} />
             <P />
             </Blurb>
           <Blurb>

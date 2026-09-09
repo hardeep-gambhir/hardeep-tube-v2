@@ -4,7 +4,7 @@ export const Blurb = styled.span`
 	color: ${(props) => props.theme.text};
 	font-family: VCR;
 	text-transform: uppercase;
-	line-height: 1.35rem;
+	line-height: 1.5;
 `
 
 export const BlurbHighlighted = styled(Blurb)`
@@ -12,6 +12,8 @@ export const BlurbHighlighted = styled(Blurb)`
 	color: ${(props) => props.theme.background};
 	padding: 3px 6px 4px 5px;
 	width: fit-content;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
 `
 
 export const P = styled.p`

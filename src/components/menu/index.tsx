@@ -90,14 +90,22 @@ export const Component: FC<IMenu> = (props) => {
 			props.onIsMobileMenuOpenChange(false)
 	}, [width])
 
+	useEffect(() => {
+		if (!props.isMobileMenuOpen) return
+		const previous = document.body.style.overflow
+		document.body.style.overflow = "hidden"
+		return () => { document.body.style.overflow = previous }
+	}, [props.isMobileMenuOpen])
+
 	const activateCurrentSelection = () => {
 		if (width === null) return
 		router.push(pathForMenu(selected))
+		props.onIsMobileMenuOpenChange(false)
 	}
 
 	const clearCurrentSelection = () => {
 		if (width === null) return
-		if (props.activeMenu === selected) props.onIsMobileMenuOpenChange(false)
+		props.onIsMobileMenuOpenChange(false)
 		setSelected(props.activeMenu)
 	}
 
@@ -248,7 +256,7 @@ export const Component: FC<IMenu> = (props) => {
 	return (
 		<>
 			<Menu>{menu()}</Menu>
-			{props.isMobileMenuOpen ? <MobileMenu>{mobileMenu()}</MobileMenu> : <></>}
+			{props.isMobileMenuOpen ? <MobileMenu id="mobile-navigation" aria-label="Main navigation">{mobileMenu()}</MobileMenu> : <></>}
 		</>
 	)
 }

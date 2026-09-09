@@ -6,15 +6,9 @@ import { Canvas as ThreeCanvas } from "@react-three/fiber"
 export const Canvas = styled(ThreeCanvas)`
 	background: clear;
 	max-height: 300px;
-	width: calc(100vw - 500px);
+	width: 100%;
 `
 
 export const Container = styled(ContentContainer)`
-	height: 100vh;
-	overflow: scroll;
-	padding: 0vh 0 12vh 0;
-	@media only screen and (max-width: 500px) {
-		width: 100vw;
-		padding: 0vh 20px 18vh 20px;
-	}
+	padding-bottom: 20px;
 `
